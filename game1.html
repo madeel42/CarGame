@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>game</title>
+</head>
+<style>
+    
+       /* .rod1{
+        background-color: red;
+        margin: 70px 0px 0px 400px;
+        width: 720px;  
+    } */
+#car{
+    width: 200px;
+    position: absolute;
+    margin: 0px 0px 0px 1150px;
+}
+#road{
+        height: 625px;
+    position: absolute;
+    margin: 0px 0px 0px 940px;
+}
+#rod3{
+    position: absolute;
+    margin: 120px 0px 0px 560px;
+    width: 1346px;
+}
+#cargray{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    margin: 250px -590px 0px 0px
+}
+#btnleft{
+    position: absolute;
+    right: 37%;
+}
+#btnright{
+    position: absolute;
+    right: 40%;
+}
+#btntop{
+    position: absolute;
+    right: 44%;
+}
+#btndown{
+    position: absolute;
+    right: 47%;
+}
+
+</style>
+<body>
+    
+    <div class="rod1">
+            <img src="road4.png" id="road">
+    </div>
+    <div class="rood2">
+            <img src="road3.png" id="rod3">
+    </div>
+    <div>
+        <img src="car.png" id="cargray">
+    </div>
+    
+            <img src="car2.png" id="car">
+            </div>
+            <button id="btnleft" onclick="left()">Left</button>
+            <button id="btnright" onclick="right()">Right</button>
+           <button id="btntop" onclick="movetop()">Top</button>
+           <button id="btndown" onclick="movedown()">down</button>
+           
+    
+<script>
+    let key1 = setInterval(consolefun,10);
+    let key2 = setInterval(caargry,10);
+
+    function consolefun(){
+      let c = ++car.offsetTop;
+      car.style.top = c + "px";
+      console.log(c);
+      if(c == 150 || c == 550){
+        clearInterval(key1);
+        // if(c == 550){
+        //     location.reload();
+        // }
+        
+      }
+    
+    }
+   
+    function caargry(){
+        let cvalue = --cargray.offsetLeft;
+        cargray.style.left = cvalue + "px";
+        if(cvalue == 880){
+            key1 = setInterval(consolefun,10);
+        }else if(cvalue == 550){
+            clearInterval(key2);
+        }
+    }
+
+
+    // }
+    // function monagain(){
+    //     let key3 = setInterval(moveagain,10)
+    // function moveagain(){
+    //     let dvalue = ++car.offsetTop;
+    //     car.style.top = dvalue + "px";
+
+        
+    // }
+    // }
+    // setTimeout(monagain,8000);
+
+//*************************************************classswork buuton 
+// let key1 = setInterval(consolefun,10);
+//     let key2 = setInterval(caargry,10);
+
+//     function consolefun(){
+//       let c = ++car.offsetTop;
+//       car.style.top = c + "px";
+//       console.log(c);
+//       if(c == 150 || c == 550){
+//         clearInterval(key1);
+        
+        
+//       }
+    
+//     }
+   
+//     function caargry(){
+//         let cvalue = --cargray.offsetLeft;
+//         cargray.style.left = cvalue + "px";
+//         if(cvalue == 880 || cvalue == 0){
+//             key1 = setInterval(consolefun,10); 
+            
+        
+//         }
+//     }
+    // function left(){
+    //         let avalue = cargray.offsetLeft-150;
+    //         cargray.style.left = avalue + "px";
+            
+    // }
+    // function right(){
+    //         let avalue = cargray.offsetLeft+150;
+    //         cargray.style.left = avalue + "px";
+            
+    // }
+    // function movetop(){
+    //     let avalue = car.offsetTop+150;
+    //         car.style.top = avalue + "px";
+    // }
+    // function movedown(){
+    //     let avalue = car.offsetTop-150;
+    //         car.style.top = avalue + "px";
+    // }
+
+    document.body.onmousemove = (evt) => {
+        cargray.style.left = evt.clientX+"px";
+        cargray.style.top = evt.clientY+"px";
+    }
+    
+
+
+</script>
+    
+</body>
+
+</html>
